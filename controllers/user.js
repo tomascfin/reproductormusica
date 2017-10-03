@@ -32,7 +32,7 @@ function saveUser(req, res) {
                         if (!userStored) {
                             res.status(404).send({message: 'Error al guardar el usuario'});
                         } else {
-                            res.status(200).send({user : userStored});
+                            res.status(200).send({user : userStored, message: 'Usuario ingresado'});
                         }
                     }
                 })
@@ -53,6 +53,7 @@ function login(req, res){
     var password = params.password;
 
     User.findOne({email: email.toLowerCase()}, (err, user) => {
+        console.log(email.toLocaleLowerCase());
         if(err){
             res.status(500).send({message: 'Error e la peticion'});
         }else{
