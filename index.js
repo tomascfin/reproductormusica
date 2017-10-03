@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/curso_mean2', (err, res) => {
     }else{
         console.log('Conexion exitosa');
         app.listen(port, function () {
-            console.log('Servidor del api rest esta corriendo');
+            console.log('Servidor  del api rest esta corriendo');
         });
     }
 });

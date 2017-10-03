@@ -53,7 +53,7 @@ function login(req, res){
     var password = params.password;
 
     User.findOne({email: email.toLowerCase()}, (err, user) => {
-        if(error){
+        if(err){
             res.status(500).send({message: 'Error e la peticion'});
         }else{
             if(!user){
