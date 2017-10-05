@@ -2,6 +2,7 @@
 
 var bcrypt = require('bcrypt-nodejs');
 var User = require('../models/user');
+var jwt = require('../servicios/jwt');
 
 function pruebas(req, res) {
     res.status(200).send({message: 'Probando una accion del controlador de usuarios del api rest con node y mongo'});
@@ -65,7 +66,10 @@ function login(req, res){
                     if(check){
                         //devolver los datos del usuario logueado
                         if(params.gethash){
-                            //devolver jwt
+                            res.status(200).send({
+                               token: jwt.createToken(user)
+                            });
+
                         }else{
                             res.status(200).send({user});
                         }
