@@ -53,7 +53,7 @@ function login(req, res){
     var password = params.password;
 
     User.findOne({email: email.toLowerCase()}, (err, user) => {
-        console.log(email.toLocaleLowerCase());
+        console.log(typeof emailgit ad);
         if(err){
             res.status(500).send({message: 'Error e la peticion'});
         }else{
