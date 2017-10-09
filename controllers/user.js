@@ -81,7 +81,7 @@ function login(req, res) {
             }
         }
     })
-}
+};
 
 function updateUser(req, res) {
 
