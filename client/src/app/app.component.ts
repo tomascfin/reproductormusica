@@ -53,9 +53,7 @@ export class AppComponent implements OnInit {
                             } else {
                                 //Crear elemento en el localstorage para tener al usuario en sesion
                                 localStorage.setItem("token", token);
-                                console.log(token);
-                                console.log(identity);
-                                //conseguir el token para enviarselo a cada peticion http
+                                this.user = new User('', '', '', '', '', 'ROLE_USER', '');
 
                             }
                         },
