@@ -73,6 +73,7 @@ function login(req, res) {
                             });
 
                         } else {
+                            console.log(user);
                             res.status(200).send({user});
                         }
                     } else {
