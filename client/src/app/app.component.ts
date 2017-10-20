@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
     }
 
-    public onSubmit() {
+    public enSubmit() {
 
         console.log(this.user);
 
