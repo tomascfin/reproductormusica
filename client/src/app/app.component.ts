@@ -1,7 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {User} from "./models/user";
 import {UserService} from "./services/user.service";
-import {identity} from "rxjs/util/identity";
+import * as io from 'socket.io-client';
+
 
 @Component({
     selector: 'app-root',
@@ -16,18 +17,34 @@ export class AppComponent implements OnInit {
     public errorMessage;
     public user_register: User;
     public alertRegister;
+     socket: SocketIOClient.Socket;
 
     constructor(private _userService: UserService) {
         this.user = new User('', '', '', '', '', 'ROLE_USER', '');
         this.user_register = new User('', '', '', '', '', 'ROLE_USER', '');
+        this.socket = io.connect('http://localhost:3977');
     }
 
     ngOnInit() {
         this.identity = this._userService.getIdentity();
         this.token = this._userService.getToken();
-
         //console.log(this.identity);
         //console.log(this.token);
+
+        this.socket.emit('event1', (data)=>{
+            console.log(data.msg);
+        });
+
+        this.socket.on('event2', (data: any) =>{
+            console.log(data.msg);
+            this.socket.emit('event3', {
+                msg: 'Si, esta funcionando'
+            });
+        });
+
+        this.socket.on('event4', (data: any)=>{
+            console.log(data.msg);
+        });
     }
 
     public enSubmit() {
