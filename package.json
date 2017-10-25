@@ -1,0 +1,9 @@
+{
+  "name": "nodejs-triquelme",
+  "version": "0.0.0",
+  "description": "Proyecto de API Rest con NodeJS",
+  "author": "Tomas Riquelme",
+  "dependencies": {
+        "express": "^4.16.1"
+    }
+}
