@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     public errorMessage;
     public user_register: User;
     public alertRegister;
-     socket: SocketIOClient.Socket;
+    socket: SocketIOClient.Socket;
 
     constructor(private _userService: UserService) {
         this.user = new User('', '', '', '', '', 'ROLE_USER', '');

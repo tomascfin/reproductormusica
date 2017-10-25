@@ -16,8 +16,8 @@ var io = require('socket.io')(server);
 
 
 
-mongoose.connect('mongodb://localhost:27017/curso_mean2', (err, res) => {
-//mongoose.connect('mongodb://tomas:123456@ds161304.mlab.com:61304/curso_mean2', (err, res) => {
+//mongoose.connect('mongodb://localhost:27017/curso_mean2', (err, res) => {
+mongoose.connect('mongodb://tomas:123456@ds161304.mlab.com:61304/curso_mean2', (err, res) => {
     if (err) {
         throw err;
     } else {
